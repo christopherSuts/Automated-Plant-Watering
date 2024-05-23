@@ -17,7 +17,7 @@ main:
     CLR   R18 
     CLR   R19 
 loop: 
-    RCALL delay_timer2s 
+    ; RCALL delay_timer2s 
     RCALL I2C_start 
     LDI   R27, 0b10010000 
     RCALL I2C_write 

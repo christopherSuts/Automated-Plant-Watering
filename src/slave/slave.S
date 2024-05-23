@@ -191,7 +191,6 @@ msg: .ascii "Humidity Level :" ;use even number of chars in string
                                ;odd number gives compilation error!!!
 
 agn: 
-    RCALL delay_timer2s 
     RCALL I2C_init 
     RCALL I2C_listen 
     RCALL I2C_read 
@@ -248,7 +247,7 @@ agn:
         LDI   R16, 0xC0     ;force cursor beginning of 2nd line
         RCALL command_wrt
         RCALL delay_ms
-
+    ; RCALL delay_timer2s 
     RJMP  agn 
  
 I2C_init: 
