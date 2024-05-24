@@ -3,6 +3,8 @@
 .global main 
  
 main: 
+    SBI DDRD, 7 ; output pin for relay
+    LDI R16, 20 ; 20kali
     LDI R23, (1<<INT0) 
     OUT EIMSK, R23 
     LDI R23, (1<<ISC01) 
@@ -17,7 +19,16 @@ main:
     CLR   R18 
     CLR   R19 
 loop: 
-    ; RCALL delay_timer2s 
+    CPI R16, 1
+    BRSH delay_timer_0_1s_hop
+    balikdaridelay:
+
+    CPI R16, 0
+    BREQ relaySwitch_hop
+    
+    DEC R16
+    balikdariswitching:
+
     RCALL I2C_start 
     LDI   R27, 0b10010000 
     RCALL I2C_write 
@@ -26,7 +37,7 @@ loop:
     RCALL I2C_stop 
     SBI   DDRB, 1 
     CBI   PORTB, 1 
-    RCALL delay_20ms 
+    RCALL delay_20ms ; coba di-comment nanti
     SBI   PORTB, 1 
     CBI   DDRB, 1 
 
@@ -42,6 +53,12 @@ w3: SBIC  PINB, 1
     RCALL DHT11_reading 
 
     RJMP  loop 
+
+delay_timer_0_1s_hop:
+  RJMP delay_timer_0_1s
+  
+relaySwitch_hop:
+  RJMP relaySwitch
 
 I2C_start: 
     LDI   R21, (1<<TWINT)|(1<<TWSTA)|(1<<TWEN) 
@@ -100,8 +117,29 @@ delay_20ms:
         BRNE  l1_20ms 
     RET 
  
-delay_timer2s: 
-  .EQU value, 34285  
+relaySwitch:
+  LDI R16, 20 ; 20kali (reset)
+
+  IN R24, PORTD 
+  ANDI  R24, 0x80
+  CPI   R24, 0x80
+  BRNE turnOn
+
+  ; CBI PORTD, 7
+  LDI R20, 0x0
+  OUT PORTD, R20 
+  RJMP balikdariswitching
+
+  turnOn:
+    ; SBI PORTD, 7
+    LDI R20, 0x80
+    OUT PORTD, R20 
+
+  RJMP balikdariswitching
+
+delay_timer_0_1s: 
+  ; .EQU value, 34285  
+  .EQU value, 63972  
   LDI R20, hi8(value) 
   STS TCNT1H, R20 
   LDI R20, lo8(value)
@@ -119,7 +157,8 @@ STS TCNT1L, R20
     OUT TIFR1, R20  
     LDI R20, 0b00000000  
     STS TCCR1B, R20  
-RET 
+; RET
+RJMP balikdaridelay 
  
 delay_timer0: 
     CLR   R20 
