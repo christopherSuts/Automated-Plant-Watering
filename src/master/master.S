@@ -4,7 +4,7 @@
  
 main: 
     SBI DDRD, 7 ; output pin for relay
-    LDI R16, 20 ; 20kali
+    LDI R16, 25 ; 25 kali 0,2s = 5 detik
     LDI R23, (1<<INT0) 
     OUT EIMSK, R23 
     LDI R23, (1<<ISC01) 
@@ -20,7 +20,7 @@ main:
     CLR   R19 
 loop: 
     CPI R16, 1
-    BRSH delay_timer_0_1s_hop
+    BRSH delay_timer_0_2s_hop
     balikdaridelay:
 
     CPI R16, 0
@@ -52,10 +52,14 @@ w3: SBIC  PINB, 1
     RCALL DHT11_reading 
     RCALL DHT11_reading 
 
+    ; cek humidity level
+    CPI R19, 0x32
+    BRLO turnOn
+
     RJMP  loop 
 
-delay_timer_0_1s_hop:
-  RJMP delay_timer_0_1s
+delay_timer_0_2s_hop:
+  RJMP delay_timer_0_2s
   
 relaySwitch_hop:
   RJMP relaySwitch
@@ -118,7 +122,7 @@ delay_20ms:
     RET 
  
 relaySwitch:
-  LDI R16, 20 ; 20kali (reset)
+  LDI R16, 25 ; 25 kali 0,2s = 5 detik (reset)
 
   IN R24, PORTD 
   ANDI  R24, 0x80
@@ -137,9 +141,9 @@ relaySwitch:
 
   RJMP balikdariswitching
 
-delay_timer_0_1s: 
+delay_timer_0_2s: 
   ; .EQU value, 34285  
-  .EQU value, 63972  
+  .EQU value, 62410  
   LDI R20, hi8(value) 
   STS TCNT1H, R20 
   LDI R20, lo8(value)
