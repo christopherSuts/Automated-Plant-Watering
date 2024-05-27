@@ -12,4 +12,29 @@ Program "Automated Plant Watering" dirancang untuk mengatasi masalah ini dengan 
 Gambar di bawah adalah skematik dan bentuk rangkaian asli dari program "Automated Plant Watering" ini.
 
 Dalam rangkaian ini, kami menggunakan komponen-komponen sebagai berikut :
-- on prog.
+- Arduino Uno (ARD1 - master dan ARD2 - slave)
+  Penggunaan arduino memang sudah menjadi komponen dasar yang biasa digunakan pada rangkaian      pemrograman dengan bahasa Assembly sebagai mikrokontroller yang akan mengontrol alur            komunikasi alat dalam sistem. Peran kedua arduino itu merupakan implementasi dari modul I2C,    yang memiliki konfigurasi master dan slave.
+- DHT11
+  Sensor DHT11 merupakan sensor yang digunakan untuk memeriksa dan mengukur tingkat kelembaban    tanah.
+- Relay (RL1)
+  Relay berfungsi sebagai switch elektronik yang diaktifkan oleh sinyal dari Arduino. Ketika      kelembaban rendah (disini ambang batasnya jika dibawah 50% akan diaktifkan), Arduino            mengirimkan sinyal ke relay untuk mengaktifkan pompa air, dan ketika kondisi sebaliknya,        relay akan mematikan pompa dan akan mengaktifkan pompa berdasarkan timer.
+- LCD 16x2
+  Penggunaan LCD ini adalah pengimplementasian modul serial port, berguna untuk menampilkan       data kelembaban tanah setelah diukur oleh sensor DHT11. 
+- Resistor Pull-Up (R3 dan R4)
+  Resistor ini digunakan sebagai pull-up untuk jalur SDA dan SCL pada komunikasi I2C. Hal ini     penting untuk memastikan bahwa jalur I2C berfungsi dengan baik.
+
+## iii. Software Implementation Details
+Program "Automated Plant Watering" overall dikontrol dengan sistem master dan slave yang menggunakan protokol I2C dan sensor DHT11 yang akan mengukur kelembaban tanah, lalu menjalankan water pump untuk menyiram tanaman tergantung pada time limit yang sudah ditentukan. Berikut adalah penjelasan lebih lengkap dari pengimplementasian master dan slave sehingga alat penyiraman otomatis ini dapat bekerja.
+
+Konfigurasi master :
+
+Konfigurasi slave :
+
+
+## iv. Test Results and Performance Evaluation
+Hasil run rangkaian pada proteus :
+
+Hasil run rangkaian fisik :
+
+## v. Conclusion and Future Work
+Program "Automated Plant Watering" merupakan solusi inovatif yang menawarkan efisiensi dan efektivitas dalam pengelolaan penyiraman tanaman. Dengan teknologi ini, penyiraman dilakukan secara otomatis berdasarkan tingkat kelembaban tanah, sehingga menghindari masalah seperti pembusukan akar atau kekeringan yang dapat mengganggu produktivitas tanaman. Selain itu, program ini sangat membantu bagi mereka yang memiliki keterbatasan waktu untuk merawat tanaman, memastikan tanaman tetap terjaga dengan baik. Secara keseluruhan, alat penyiraman otomatis ini tidak hanya meningkatkan efisiensi penggunaan air, tetapi juga mendukung pertanian yang lebih berkelanjutan dan ramah lingkungan.
