@@ -28,7 +28,8 @@ Program "Automated Plant Watering" overall dikontrol dengan sistem master dan sl
 
 Konfigurasi master :
 
-Konfigurasi slave :
+Konfigurasi slave : [![MEME6](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/804c3e04-fc5e-47cf-9925-23037b9087a0)
+]
 
 
 ## iv. Test Results and Performance Evaluation
