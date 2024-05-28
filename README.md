@@ -10,7 +10,7 @@ Program "Automated Plant Watering" dirancang untuk mengatasi masalah ini dengan 
 
 ## ii. Hardware Design and Implementation Details
 Gambar di bawah adalah skematik dan bentuk rangkaian asli dari program "Automated Plant Watering" ini.
-![Screenshot 2024-05-25 131504](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/794ecc6a-0ca7-4d74-803b-0a100a0563ac)
+![Screenshot 2024-05-25 163105](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/fe2c9136-04c5-4155-9600-8af3b81f8b68)
 
 Dalam rangkaian ini, kami menggunakan komponen-komponen sebagai berikut :
 ![Screenshot 2024-05-28 122350](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/477911d0-8bb8-4226-a453-22f0e804325e)
