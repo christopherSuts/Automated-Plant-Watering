@@ -27,11 +27,12 @@ Program "Automated Plant Watering" overall dikontrol dengan sistem master dan sl
 ![Screenshot 2024-05-26 182845](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/39307876-ecd5-4e04-98cc-cb71a94576bf) ![Screenshot 2024-05-26 182808](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/7a58aa0c-6572-401d-8ff7-58aef00917d9)
 
 ## iv. Test Results and Performance Evaluation
-Hasil run rangkaian pada proteus :
+
+Hasil run rangkaian pada proteus : 
 ![Screenshot 2024-05-28 201444](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/4423b9c5-7bb5-4f9e-815e-1c0e03fc25cc)
 
 
-Hasil run rangkaian fisik :
+Hasil run rangkaian fisik : 
 ![output lcd testing](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/641aeeaf-c221-42be-99e5-861679bfd412)
 
 
