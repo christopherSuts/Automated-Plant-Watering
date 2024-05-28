@@ -29,12 +29,7 @@ Resistor ini digunakan sebagai pull-up untuk jalur SDA dan SCL pada komunikasi I
 ## iii. Software Implementation Details
 Program "Automated Plant Watering" overall dikontrol dengan sistem master dan slave yang menggunakan protokol I2C dan sensor DHT11 yang akan mengukur kelembaban tanah, lalu menjalankan water pump untuk menyiram tanaman tergantung pada time limit yang sudah ditentukan. Berikut adalah penjelasan lebih lengkap dari pengimplementasian master dan slave menggunakan flowchart sehingga alat penyiraman otomatis ini dapat bekerja.
 
-Konfigurasi master :
-![Screenshot 2024-05-26 182845](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/39307876-ecd5-4e04-98cc-cb71a94576bf)
-
-
-Konfigurasi slave : 
-![Screenshot 2024-05-26 182808](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/7a58aa0c-6572-401d-8ff7-58aef00917d9)
+![Screenshot 2024-05-26 182845](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/39307876-ecd5-4e04-98cc-cb71a94576bf) ![Screenshot 2024-05-26 182808](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/7a58aa0c-6572-401d-8ff7-58aef00917d9)
 
 ## iv. Test Results and Performance Evaluation
 Hasil run rangkaian pada proteus :
