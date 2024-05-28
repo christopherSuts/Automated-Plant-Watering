@@ -10,27 +10,27 @@ Program "Automated Plant Watering" dirancang untuk mengatasi masalah ini dengan 
 
 ## ii. Hardware Design and Implementation Details
 Gambar di bawah adalah skematik dan bentuk rangkaian asli dari program "Automated Plant Watering" ini.
-
+![Screenshot 2024-05-25 131504](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/794ecc6a-0ca7-4d74-803b-0a100a0563ac)
 Dalam rangkaian ini, kami menggunakan komponen-komponen sebagai berikut :
+![Screenshot 2024-05-28 122350](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/477911d0-8bb8-4226-a453-22f0e804325e)
 - Arduino Uno (ARD1 - master dan ARD2 - slave)
-  Penggunaan arduino memang sudah menjadi komponen dasar yang biasa digunakan pada rangkaian      pemrograman dengan bahasa Assembly sebagai mikrokontroller yang akan mengontrol alur            komunikasi alat dalam sistem. Peran kedua arduino itu merupakan implementasi dari modul I2C,    yang memiliki konfigurasi master dan slave.
+Penggunaan arduino memang sudah menjadi komponen dasar yang biasa digunakan pada rangkaian pemrograman dengan bahasa Assembly sebagai mikrokontroller yang akan mengontrol alur komunikasi alat dalam sistem. Peran kedua arduino itu merupakan implementasi dari modul I2C, yang memiliki konfigurasi master dan slave.
 - DHT11
-  Sensor DHT11 merupakan sensor yang digunakan untuk memeriksa dan mengukur tingkat kelembaban    tanah.
+Sensor DHT11 merupakan sensor yang digunakan untuk memeriksa dan mengukur tingkat kelembaban tanah.
 - Relay (RL1)
-  Relay berfungsi sebagai switch elektronik yang diaktifkan oleh sinyal dari Arduino. Ketika      kelembaban rendah (disini ambang batasnya jika dibawah 50% akan diaktifkan), Arduino            mengirimkan sinyal ke relay untuk mengaktifkan pompa air, dan ketika kondisi sebaliknya,        relay akan mematikan pompa dan akan mengaktifkan pompa berdasarkan timer.
+Relay berfungsi sebagai switch elektronik yang diaktifkan oleh sinyal dari Arduino. Ketika kelembaban rendah (disini ambang batasnya jika dibawah 50% akan diaktifkan), Arduino mengirimkan sinyal ke relay untuk mengaktifkan pompa air, dan ketika kondisi sebaliknya, relay akan mematikan pompa dan akan mengaktifkan pompa berdasarkan timer.
 - LCD 16x2
-  Penggunaan LCD ini adalah pengimplementasian modul serial port, berguna untuk menampilkan       data kelembaban tanah setelah diukur oleh sensor DHT11. 
+Penggunaan LCD ini adalah pengimplementasian modul serial port, berguna untuk menampilkan data kelembaban tanah setelah diukur oleh sensor DHT11. 
 - Resistor Pull-Up (R3 dan R4)
-  Resistor ini digunakan sebagai pull-up untuk jalur SDA dan SCL pada komunikasi I2C. Hal ini     penting untuk memastikan bahwa jalur I2C berfungsi dengan baik.
+Resistor ini digunakan sebagai pull-up untuk jalur SDA dan SCL pada komunikasi I2C. Hal ini penting untuk memastikan bahwa jalur I2C berfungsi dengan baik.
 
 ## iii. Software Implementation Details
-Program "Automated Plant Watering" overall dikontrol dengan sistem master dan slave yang menggunakan protokol I2C dan sensor DHT11 yang akan mengukur kelembaban tanah, lalu menjalankan water pump untuk menyiram tanaman tergantung pada time limit yang sudah ditentukan. Berikut adalah penjelasan lebih lengkap dari pengimplementasian master dan slave sehingga alat penyiraman otomatis ini dapat bekerja.
-
+Program "Automated Plant Watering" overall dikontrol dengan sistem master dan slave yang menggunakan protokol I2C dan sensor DHT11 yang akan mengukur kelembaban tanah, lalu menjalankan water pump untuk menyiram tanaman tergantung pada time limit yang sudah ditentukan. Berikut adalah penjelasan lebih lengkap dari pengimplementasian master dan slave menggunakan flowchart sehingga alat penyiraman otomatis ini dapat bekerja.
 Konfigurasi master :
+![Screenshot 2024-05-26 182845](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/39307876-ecd5-4e04-98cc-cb71a94576bf)
 
-Konfigurasi slave : [![MEME6](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/804c3e04-fc5e-47cf-9925-23037b9087a0)
-]
-
+Konfigurasi slave : 
+![Screenshot 2024-05-26 182808](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/7a58aa0c-6572-401d-8ff7-58aef00917d9)
 
 ## iv. Test Results and Performance Evaluation
 Hasil run rangkaian pada proteus :
