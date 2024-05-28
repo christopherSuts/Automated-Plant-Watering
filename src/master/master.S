@@ -132,9 +132,6 @@ delay_20ms:
     RET 
  
 relaySwitch:
-  ; Reset Counter Delay
-  LDI R16, 25 
-
   ; Cek kondisi sinyal relay (current state)
   IN R24, PORTD 
   ANDI  R24, 0x80
@@ -142,12 +139,14 @@ relaySwitch:
   BRNE turnOn
 
   ; mematikkan relay
+  LDI R16, 25     ; Reset Counter Delay (25x0.2 = 5s)
   LDI R20, 0x0
   OUT PORTD, R20 
   RJMP balikdariswitching
 
   ; menyalakan relay
   turnOn:
+    LDI R16, 10   ; Reset Counter Delay (10x0.2 = 2s)
     LDI R20, 0x80
     OUT PORTD, R20 
 
