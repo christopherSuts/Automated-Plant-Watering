@@ -9,7 +9,7 @@ Pengelolaan air secara efisien dan ramah lingkungan menjadi semakin penting, ter
 Program "Automated Plant Watering" dirancang untuk mengatasi masalah ini dengan mengotomatisasi proses penyiraman berdasarkan tingkat kelembaban tanah. Alat ini memanfaatkan sensor dan mikrokontroler untuk memantau kelembaban tanah dan mengontrol pompa air untuk menyiram tanamannya sesuai dengan waktu yang ditentukan. Tujuan utama dari "Automated Plant Watering" ini adalah untuk memastikan kesehatan tanaman yang optimal serta meminimalisir terjadinya pemborosan air.
 
 ## ii. Hardware Design and Implementation Details
-Gambar di bawah adalah skematik dan bentuk rangkaian asli dari program "Automated Plant Watering" ini.
+Gambar di bawah adalah skematik untuk rangkaian asli dari program "Automated Plant Watering" ini.
 ![Screenshot 2024-05-25 163105](https://github.com/christopherSuts/Automated-Plant-Watering/assets/144332036/fe2c9136-04c5-4155-9600-8af3b81f8b68)
 
 Dalam rangkaian ini, kami menggunakan komponen-komponen sebagai berikut :
